@@ -47,9 +47,8 @@
     function fillDetails(jsonObject) {
         var returnedTemp = template;
         for (var key in jsonObject) {
-            var regex = new RegExp("#" + key, "g");
-            var regex2 = new RegExp("%23" + key, "g");
-            returnedTemp = new String(returnedTemp).replace(regex, jsonObject[key]).replace(regex2, jsonObject[key])
+            var regex = new RegExp("#{" + key + "}", "g");
+            returnedTemp = new String(returnedTemp).replace(regex, jsonObject[key])
         }
         return returnedTemp;
     }
