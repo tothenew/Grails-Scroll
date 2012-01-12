@@ -1,23 +1,19 @@
 /* FONT STACK */
-body,
+
 input, select, textarea {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+body {
+    background-color: #484848;
+    color: #FFFFFF;
+    font-family: 'verdana', 'helvetica', sans-serif;
+    font-size: 100%;
 }
 
 /* BASE LAYOUT */
 
 html {
-    background-color: #ddd;
-    background-image: -moz-linear-gradient(center top, #aaa, #ddd);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
-    background-image: linear-gradient(top, #aaa, #ddd);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
-    background-repeat: no-repeat;
-    height: 100%;
-    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 html.no-cssgradients {
@@ -32,36 +28,20 @@ html * {
     margin: 0;
 }
 
-body {
-    background: #ffffff;
-    color: #333333;
-    margin: 0 auto;
-    max-width: 960px;
-    overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-    -moz-box-shadow: 0 0 0.3em #255b17;
-    -webkit-box-shadow: 0 0 0.3em #255b17;
-    box-shadow: 0 0 0.3em #255b17;
-}
-
 #grailsLogo {
-    background-color: #abbf78;
+    height: 320px;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,
 .ie8 body {
-    border-color: #255b17;
     border-style: solid;
     border-width: 0 1px;
 }
 
 .ie6 body {
     height: 100%;
-}
-
-a:link, a:visited, a:hover {
-    color: #48802c;
 }
 
 a:hover, a:active {
@@ -75,7 +55,8 @@ h1 {
     margin: 0.8em 0 0.3em 0;
 }
 
-ul {
+ul, ul li {
+    list-style: none outside none;
     padding: 0;
 }
 
@@ -84,14 +65,6 @@ img {
 }
 
 /* GENERAL */
-
-#grailsLogo a {
-    display: inline-block;
-    margin: 1em;
-}
-
-.content {
-}
 
 .content h1 {
     border-bottom: 1px solid #CCCCCC;
@@ -103,18 +76,53 @@ img {
     border: none;
 }
 
-.footer {
-    background: #abbf78;
-    color: #000;
-    clear: both;
-    font-size: 0.8em;
-    margin-top: 1.5em;
-    padding: 1em;
-    min-height: 1em;
+.bullets>ul>li {
+    list-style-type: circle;
 }
 
-.footer a {
-    color: #255b17;
+#footer {
+    background-color: #B3AB78;
+    color: inherit;
+    font-size: 12px;
+    padding: 11px 20px 6px 0;
+    text-align: right;
+}
+
+#bodyWrap {
+    font-size: 14px;
+    margin: auto;
+    width: 966px;
+    font-weight: bold;
+}
+
+.clearthis {
+    clear: both;
+    float: none;
+    font-size: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#bodyContainer {
+    position: relative;
+    float: right;
+}
+
+#bodyInner {
+    padding: 15px 0;
+    width: 800px;
+}
+
+#bodyContent {
+    padding: 14px;
+}
+
+#innerMost {
+    background-color: #8E8257;
+    border: 6px solid #FFFFFF;
+    color: inherit;
 }
 
 .spinner {
@@ -586,8 +594,20 @@ a.skip {
 
 .box {
     border: 1px solid #000000;
-    width: 800px;
-    margin: 15px 0 0 79px
+    margin: 15px 0 0 0;
+}
+
+a:link, a:visited, a:hover {
+    text-decoration: none;
+    color: #DFDFDF;
+}
+
+#header {
+    background-color: #B3AB78;
+    color: inherit;
+    padding: 4px 0 4px 14px;
+    font-size: 30px;
+
 }
 
 .title {
@@ -601,8 +621,59 @@ a.skip {
     padding: 8px
 }
 
-.image{
+h3 {
+    font-size: 22px;
+}
+
+.image {
     width: 230px;
     float: left;
     padding-left: 10px;
+}
+
+#navmenu {
+    float: left;
+    margin-top: 150px;
+    position: relative;
+    width: 166px;
+    background: url(../images/navmenu_bg_bot.gif) no-repeat 0% 100%;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+#navmenu_b {
+    padding: 15px 0px;
+    width: 166px;
+    background: url(../images/navmenu_bg_top.gif) no-repeat 0% 0%;
+}
+
+#navmenu_c {
+    color: inherit;
+    background-color: #6d6845;
+    border-left: #fff 6px solid;
+}
+
+#navmenu a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#navmenu li {
+    border-top: #fff 1px solid;
+    text-align: center;
+}
+
+#navmenu li a {
+    display: block;
+    padding: 5px 0px;
+    width: 160px;
+}
+
+#navmenu li a:hover {
+    color: inherit;
+    background-color: #989160
+}
+
+#navmenu li.list_first {
+    border-top: none;
 }

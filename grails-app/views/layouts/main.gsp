@@ -20,9 +20,31 @@
 </head>
 
 <body>
-<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
-<g:layoutBody/>
-<div class="footer" role="contentinfo"></div>
+<div id="bodyWrap">
+    <div id="bodyContainer">
+        <div id="bodyInner">
+            <div id="innerMost">
+                <div id="header">Lazy Loading</div>
+
+                <div id="bodyContent">
+                    <g:layoutBody/>
+                </div>
+                <div id="footer">© 2012 diva.setia@gmail.com</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navmenu">
+        <div id="navmenu_b">
+            <div id="navmenu_c">
+                <ul>
+                    <li><a href="${createLink(controller: 'scroll', action: 'howItWorks')}">HOME</a></li>
+                    <li><a href="${createLink(controller: 'scroll', action: 'index')}">DEMO</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 <g:javascript library="application"/>
