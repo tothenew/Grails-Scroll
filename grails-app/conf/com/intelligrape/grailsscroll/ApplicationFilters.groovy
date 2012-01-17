@@ -1,4 +1,4 @@
-package grailsscroll
+package com.intelligrape.grailsscroll
 
 class ApplicationFilters {
 
