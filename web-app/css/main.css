@@ -5,15 +5,50 @@ input, select, textarea {
 }
 
 body {
-    background-color: #484848;
-    color: #FFFFFF;
-    font-family: 'verdana', 'helvetica', sans-serif;
-    font-size: 100%;
+    background: url(../images/dot__v254.png) repeat-x scroll left 107px transparent;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* BASE LAYOUT */
 
-html {
+html, body {
+    height: 100%;
+    margin: auto;
+
+}
+
+#container {
+    background: url(../images/shadow__v254.png) repeat-y scroll left top transparent;
+    margin: 0 auto;
+    position: relative;
+    width: 1020px;
+}
+
+
+#header {
+    background: url(../images/dot__v254.png) repeat-x scroll left 107px #FFFFFF;
+    height: 88px;
+    padding: 20px 25px 0;
+    position: relative;
+}
+
+#logo {
+    float: left;
+    left: 25px;
+    position: absolute;
+    width: 250px;
+    z-index: 1;
+}
+
+#right-header {
+    margin-left: 250px;
+    width: 718px;
+}
+
+#follow-us {
+    height: 58px;
 }
 
 html.no-cssgradients {
@@ -48,16 +83,15 @@ a:hover, a:active {
     outline: none; /* prevents outline in webkit on active links but retains it for tab focus */
 }
 
-h1 {
-    color: #48802c;
-    font-weight: normal;
-    font-size: 1.25em;
-    margin: 0.8em 0 0.3em 0;
+h1, h2, h3, h4, h5, h6, p, ul, form {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
 }
 
-ul, ul li {
-    list-style: none outside none;
-    padding: 0;
+#follow-us ul li {
+    float: right;
+    margin-left: 14px;
 }
 
 img {
@@ -80,21 +114,11 @@ img {
     list-style-type: circle;
 }
 
-#footer {
-    background-color: #B3AB78;
-    color: inherit;
-    font-size: 12px;
-    padding: 11px 20px 6px 0;
-    text-align: right;
-}
-
-#bodyWrap {
-    font-size: 14px;
+#wrapper {
+    clear: both;
     margin: auto;
-    width: 966px;
-    font-weight: bold;
+    width: 968px;
 }
-
 .clearthis {
     clear: both;
     float: none;
@@ -103,26 +127,6 @@ img {
     margin: 0;
     overflow: hidden;
     visibility: hidden;
-}
-
-#bodyContainer {
-    position: relative;
-    float: right;
-}
-
-#bodyInner {
-    padding: 15px 0;
-    width: 800px;
-}
-
-#bodyContent {
-    padding: 14px;
-}
-
-#innerMost {
-    background-color: #8E8257;
-    border: 6px solid #FFFFFF;
-    color: inherit;
 }
 
 .spinner {
@@ -602,14 +606,6 @@ a:link, a:visited, a:hover {
     color: #DFDFDF;
 }
 
-#header {
-    background-color: #B3AB78;
-    color: inherit;
-    padding: 4px 0 4px 14px;
-    font-size: 30px;
-
-}
-
 .title {
     font-size: 18px;
     font-weight: bold;
@@ -631,49 +627,4 @@ h3 {
     padding-left: 10px;
 }
 
-#navmenu {
-    float: left;
-    margin-top: 150px;
-    position: relative;
-    width: 166px;
-    background: url(../images/navmenu_bg_bot.gif) no-repeat 0% 100%;
-    font-size: 1.15em;
-    font-weight: bold;
-}
 
-#navmenu_b {
-    padding: 15px 0px;
-    width: 166px;
-    background: url(../images/navmenu_bg_top.gif) no-repeat 0% 0%;
-}
-
-#navmenu_c {
-    color: inherit;
-    background-color: #6d6845;
-    border-left: #fff 6px solid;
-}
-
-#navmenu a {
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-#navmenu li {
-    border-top: #fff 1px solid;
-    text-align: center;
-}
-
-#navmenu li a {
-    display: block;
-    padding: 5px 0px;
-    width: 160px;
-}
-
-#navmenu li a:hover {
-    color: inherit;
-    background-color: #989160
-}
-
-#navmenu li.list_first {
-    border-top: none;
-}
