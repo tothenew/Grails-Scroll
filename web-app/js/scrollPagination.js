@@ -14,7 +14,7 @@
             'blockId':'block',
             'loadingElementURL':'spinner'
         }, options);
-        methods.addAndShowSpinner();
+        methods.addAndHideSpinner();
         methods.cloneTemplate();
         return methods.doPolling();
     };
@@ -23,7 +23,7 @@
         if (!methods.reachedAtBottom()) {
             return methods.doPolling();
         } else {
-            $('#spinnerImage').show();
+            methods.addSpinnerTextAndShowSpinner();
             if (settings.offset < settings.totalCount) {
                 $.post(settings.url, {max:settings.max,offset:settings.offset,sort:settings.sort,order:settings.order}, function(data) {
                     methods.makeTemplateForEveryRecord(data);
@@ -47,8 +47,8 @@
             template = $("#" + settings.templateId).clone().html();
             $("#" + settings.templateId).remove();
         },
-        addAndShowSpinner:function() {
-            $("<h1 id='spinnerImage' align='center'><img src='" + settings.loadingElementURL + "'alt='spinner'/></h1>").insertAfter("#" + settings.blockId);
+        addAndHideSpinner:function() {
+            $("<h1 id='spinnerImage' style='position: absolute;bottom: 0pt;right: 50%' align='center'><img src='" + settings.loadingElementURL + "'alt='spinner'/><span id='totalRecordsWithOffset' style='width: 80px;text-align: center;position: absolute;bottom: 25px;left: 10px;font-size: 12px;font-weight: normal'></span></h1>").insertAfter("#" + settings.blockId);
             $('#spinnerImage').hide();
         },
         fillDetails:function(jsonObject) {
@@ -56,7 +56,7 @@
             for (var key in jsonObject) {
                 var regex = new RegExp("#{" + key + "}", "g");
                 var regex2 = new RegExp("#%7B" + key + "%7D", "g");
-                returnedTemp = new String(returnedTemp).replace(regex, jsonObject[key]).replace(regex2,jsonObject[key])
+                returnedTemp = new String(returnedTemp).replace(regex, jsonObject[key]).replace(regex2, jsonObject[key])
             }
             return returnedTemp;
         },
@@ -74,6 +74,10 @@
             for (var i in data) {
                 $("#" + settings.blockId).append(methods.fillDetails(data[i]));
             }
+        },
+        addSpinnerTextAndShowSpinner:function() {
+            $("#totalRecordsWithOffset").text(settings.offset + settings.max + " of " + settings.totalCount);
+            $('#spinnerImage').show();
         }
     };
 })(jQuery);

@@ -10,6 +10,7 @@ class ScrollController {
 
     def index = {
         /*vmc update grailsScroll from target folder after grails war*/
+        /*git remote rm origin...git remote add origin ""*/
         params.max = params.max ?: 10
         params.offset = params.offset ?: 0
         render(view: "scroll", model: [feedEntries: FeedEntry.list(max: params.max, offset: params.offset), totalCount: FeedEntry.count()])
