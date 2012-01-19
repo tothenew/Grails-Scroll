@@ -609,6 +609,11 @@ a.skip {
     margin: 15px 0 0 0;
 }
 
+.publishedDate {
+    font-size: 10px;
+    line-height: 13px
+}
+
 #blockPanel .heading {
     border-bottom: 1px dotted #A3A6A7;
     clear: both;

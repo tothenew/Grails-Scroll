@@ -13,7 +13,9 @@
 <div id="posts">
     <g:each in="${feedEntries}" var="feedEntry" status="i">
         <div class="box">
-            <div class="heading"><a href="${feedEntry.link}">${feedEntry.title}</a></div>
+            <div class="heading"><a href="${feedEntry.link}">${feedEntry.title}</a>
+
+                <div class="publishedDate">Published on ${feedEntry.publishedDate}</div></div>
 
             <div class="description">${feedEntry.description} ...</div>
         </div>
@@ -25,6 +27,6 @@
 </div>
 
 <ig:scroll totalRecords="${totalCount}" link="${createLink(controller:'scroll',action:'showMore')}"
-           templateId="templateToShow" blockId="posts" loadingElementURL="${resource(dir:'images',file:'ajaxLoader.gif')}"/>
+           templateId="templateToShow" blockId="posts" sort="publishedDate" loadingElementURL="${resource(dir:'images',file:'ajaxLoader.gif')}"/>
 </body>
 </html>
