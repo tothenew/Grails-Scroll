@@ -2,6 +2,9 @@ package com.intelligrape.grailsScroll
 
 import grails.converters.JSON
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import com.sun.syndication.io.SyndFeedInput
+import com.sun.syndication.io.XmlReader
+import com.sun.syndication.feed.synd.SyndFeed
 
 class ScrollController {
 
@@ -39,4 +42,5 @@ class ScrollController {
             return false
         }
     }
+
 }

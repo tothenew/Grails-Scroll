@@ -13,9 +13,9 @@
 <div id="posts">
     <g:each in="${feedEntries}" var="feedEntry" status="i">
         <div class="box">
-            <div class="title"><g:link controller="scroll" action="show" params="[id:feedEntry.id]">${feedEntry.title}</g:link></div>
+            <div class="heading"><a href="${feedEntry.link}">${feedEntry.title}</a></div>
 
-            <div class="description">${feedEntry.description}</div>
+            <div class="description">${feedEntry.description} ...</div>
         </div>
     </g:each>
 </div>

@@ -26,7 +26,6 @@ html, body {
     width: 1020px;
 }
 
-
 #header {
     background: url(../images/dot__v254.png) repeat-x scroll left 107px #FFFFFF;
     height: 88px;
@@ -119,6 +118,15 @@ img {
     margin: auto;
     width: 968px;
 }
+
+#blockPanel {
+    clear: both;
+    color: #7D7D7D;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding-top: 20px;
+}
+
 .clearthis {
     clear: both;
     float: none;
@@ -597,19 +605,22 @@ a.skip {
 }
 
 .box {
-    border: 1px solid #000000;
+    border: 1px solid #DFDFDF;
     margin: 15px 0 0 0;
+}
+
+#blockPanel .heading {
+    border-bottom: 1px dotted #A3A6A7;
+    clear: both;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 26px;
+    margin: 10px;
 }
 
 a:link, a:visited, a:hover {
     text-decoration: none;
-    color:#006dba;
-}
-
-.title {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px
+    color: #F8981D;
 }
 
 .description {

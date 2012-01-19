@@ -55,7 +55,8 @@
             var returnedTemp = template;
             for (var key in jsonObject) {
                 var regex = new RegExp("#{" + key + "}", "g");
-                returnedTemp = new String(returnedTemp).replace(regex, jsonObject[key])
+                var regex2 = new RegExp("#%7B" + key + "%7D", "g");
+                returnedTemp = new String(returnedTemp).replace(regex, jsonObject[key]).replace(regex2,jsonObject[key])
             }
             return returnedTemp;
         },

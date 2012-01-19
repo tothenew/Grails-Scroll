@@ -5,20 +5,30 @@ import com.sun.syndication.io.SyndFeedInput
 import com.sun.syndication.io.XmlReader
 import com.intelligrape.grailsScroll.FeedEntry
 import com.sun.syndication.feed.synd.SyndEntryImpl
+import com.intelligrape.grailsScroll.Feed
 
 class FeedEntryService {
+    static transactional = false
 
     void saveFeedEntries() {
-        URL feedUrl = new URL(feedUrlString)
-        SyndFeed syndFeed = new SyndFeedInput().build(new XmlReader(feedUrl))
-        for (syndFeedEntry in syndFeed?.entries) {
-            FeedEntry feedEntry = new FeedEntry(syndFeedEntry as SyndEntryImpl)
-            feedEntry.isTopicRelated = feedEntryService.isTopicRelated(feedEntry.title, resourceCenter)
-            feedEntry.description = feedEntry.description.replaceAll('<[^>]+>', '').trimLength(150)
-            feedEntry.seoUrl = FeedEntry.findByLink(feedEntry.link) ? FeedEntry.findByLink(feedEntry.link).seoUrl : FeedEntry.convertToUniqueUrl(feedEntry.title)
-            feedEntries.add(feedEntry)
+        try {
+            Feed.list().each {feed ->
+                URL feedUrl = new URL(feed.url)
+                SyndFeed syndFeed = new SyndFeedInput().build(new XmlReader(feedUrl))
+                for (syndFeedEntry in syndFeed?.entries) {
+                    if (!FeedEntry.countByLink(syndFeedEntry.link)) {
+                        FeedEntry feedEntry = new FeedEntry(syndFeedEntry as SyndEntryImpl)
+                        feedEntry.seoURL = FeedEntry.countByLink(feedEntry.link) ? FeedEntry.findByLink(feedEntry.link).seoURL : FeedEntry.convertToUniqueUrl(feedEntry.title)
+                        feedEntry.feed = feed
+                        if (feedEntry.validate()) {
+                            feedEntry.save(flush: true, failOnError: true)
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace()
         }
     }
 
-}
 }

@@ -57,7 +57,9 @@
     </div>
 
     <div id="wrapper">
-        <g:layoutBody/>
+        <div id="blockPanel">
+            <g:layoutBody/>
+        </div>
     </div>
 </div>
 
