@@ -115,16 +115,17 @@ img {
 
 #wrapper {
     clear: both;
-    margin: auto;
-    width: 968px;
+    margin-left: 35px;
+    width: 92%;
 }
 
 #blockPanel {
-    clear: both;
     color: #7D7D7D;
+    display: inline-block;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
     padding-top: 20px;
+    width: 680px;
 }
 
 .clearthis {
@@ -135,6 +136,38 @@ img {
     margin: 0;
     overflow: hidden;
     visibility: hidden;
+}
+
+.heading{
+    color: #F8981D;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    padding-bottom: 2px;
+}
+
+.headingPoint{
+    color: #1268B3;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 2px;
+}
+
+#aboutIntelligrape {
+    background: none repeat scroll 0 0 #FCFEFF;
+    color: gray;
+    float: right;
+    font-size: 14px;
+    left: 738px;
+    position: absolute;
+    top: 120px;
+    width: 240px;
+}
+
+#aboutContent{
+    border: 1px solid #DFDFDF;
+    padding: 5px;
 }
 
 .spinner {
@@ -607,6 +640,13 @@ a.skip {
 .box {
     border: 1px solid #DFDFDF;
     margin: 15px 0 0 0;
+    background: none repeat scroll 0 0 #FCFEFF;
+}
+
+#articleTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1268B3;
 }
 
 .publishedDate {

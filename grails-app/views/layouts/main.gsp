@@ -60,11 +60,38 @@
         <div id="blockPanel">
             <g:layoutBody/>
         </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                jQuery(window).scroll(function () {
+                    jQuery('#aboutIntelligrape').animate({top:jQuery(window).scrollTop() + 120 + "px" }, {queue:false, duration:150});
+                });
+            });
+        </script>
+
+
+        <div id="aboutIntelligrape">
+            <div class="headingPoint"><strong>About Intelligrape</strong></div>
+            <div id="aboutContent">
+
+                We are a web application development company based in India focused on Groovy and Grails development.
+
+                IntelliGrape specializes in delivering high quality applications using Groovy and Grails. <br/><br/>
+
+                <div class="heading"><strong>About Work</strong></div>
+
+                We have developed numerous Grails apps which include custom Grails based CMS, financial apps, cool web 2.0 products, e-commerce sites, social media applications, SaaS applications, enterprise portal and complex dynamic sites.
+                <br/> <br/>
+
+                <div class="heading"><strong>Methodologies</strong></div>
+
+                We use combination of Scrum (sprint planning, iterative development, daily stand-ups, retrospective) and XP (TDD, continuous integration, refactoring, pair-programming) for software development.
+            </div>
+        </div>
     </div>
 </div>
 
 
-<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 <g:javascript library="application"/>
 <r:layoutResources/>
 </body>

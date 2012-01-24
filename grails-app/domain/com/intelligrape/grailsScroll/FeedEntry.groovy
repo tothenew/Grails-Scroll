@@ -49,8 +49,8 @@ class FeedEntry {
         Parser tagsoupParser = new org.ccil.cowan.tagsoup.Parser()
         XmlSlurper slurper = new XmlSlurper(tagsoupParser)
         GPathResult parsedHTML = slurper.parseText(htmlString)
-        parsedHTML.depthFirst().grep { it.name() == 'script'; }.each {  it.replaceNode({}); }
-        parsedHTML.depthFirst().grep { it.name() == 'a'; }.each {  it.@rel = 'nofollow';    }
+        parsedHTML.depthFirst().grep { it.name() == 'script'; }.each { it.replaceNode({}); }
+        parsedHTML.depthFirst().grep { it.name() == 'a'; }.each { it.@rel = 'nofollow'; }
 
         List<String> htmlTagAttributeListToRemove = ConfigurationHolder.config.htmlTagAttributesToRemoveForFeedEntryDescription
         htmlTagAttributeListToRemove.each {tagAttribute ->

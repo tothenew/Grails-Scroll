@@ -48,7 +48,7 @@
             $("#" + settings.templateId).remove();
         },
         addAndHideSpinner:function() {
-            $("<h1 id='spinnerImage' style='position: absolute;bottom: 0pt;right: 50%' align='center'><img src='" + settings.loadingElementURL + "'alt='spinner'/><span id='totalRecordsWithOffset' style='width: 80px;text-align: center;position: absolute;bottom: 25px;left: 10px;font-size: 12px;font-weight: normal'></span></h1>").insertAfter("#" + settings.blockId);
+            $("<h1 id='spinnerImage' style='position: absolute;bottom: 0;right: 50%' align='center'><img src='" + settings.loadingElementURL + "'alt='spinner'/><span id='totalRecordsWithOffset' style='width: 80px;text-align: center;position: absolute;bottom: 25px;left: 10px;font-size: 16px;font-weight: bold;color: #777777'></span></h1>").insertAfter("#" + settings.blockId);
             $('#spinnerImage').hide();
         },
         fillDetails:function(jsonObject) {
